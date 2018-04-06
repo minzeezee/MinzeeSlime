@@ -1,50 +1,65 @@
 package com.example.minzee.minzeehomwork;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 
 public class MainActivity extends AppCompatActivity {
-    private String TAG;
-    FrameLayout fragment;
-
+    private String TAG = "액티비티 생명주기";
+    private Fragment firstFragment, secondFragment, thirdFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        fragment = findViewById(R.id.mainFragment);
 
-   /*     getFragmentManager()
-                .beginTransaction()
-                .add(R.id.mainFragment, new fragmentActivity())
-                .add(R.id.mainFragment, new fragment2Activity())
-                .add(R.id.mainFragment, new fragment3Activity())
-                .commit();
-*/
+        //버튼 생성하기
+        Button firstButton = findViewById(R.id.btn_firstFragment);
+        Button secondButton = findViewById(R.id.btn_secondFragment);
+        Button thirdButton = findViewById(R.id.btn_thirdFragment);
 
-     getFragmentManager()
-                .beginTransaction()
-                .add(R.id.mainFragment, new fragmentActivity())
-                .commit();
+        //연결시켜줄 프래그먼트 생성하기
+        firstFragment = new FirstFragment();
+        secondFragment = new SecondFragment();
+        thirdFragment = new ThirdFragment();
 
-        getFragmentManager()
-                .beginTransaction()
-                .add(R.id.mainFragment, new fragment2Activity())
-                .addToBackStack(null)
-                .commit();
+        //버튼을 클리하면 무엇을 할지 정해주기
+        firstButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager()
+                        .beginTransaction()
+                        //첫번째 프래그먼트 전환하기
+                        .replace(R.id.mainFragment, firstFragment)
+                        .commit();
+            }
+        });
 
-        getFragmentManager()
-                .beginTransaction()
-                .add(R.id.mainFragment,new fragment3Activity())
-                .addToBackStack(null)
-                .commit();
+        secondButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager()
+                        .beginTransaction()
+                        //첫번째 프래그먼트 전환하기
+                        .replace(R.id.mainFragment, secondFragment)
+                        .commit();
+            }
+        });
 
-
+        thirdButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager()
+                        .beginTransaction()
+                        //첫번째 프래그먼트 전환하기
+                        .replace(R.id.mainFragment, thirdFragment)
+                        .commit();
+            }
+        });
 
     }
 

@@ -11,11 +11,11 @@ import android.view.ViewGroup;
  * Created by macbook on 2018. 4. 5..
  */
 
-public class fragmentActivity extends Fragment {
+public class SecondFragment extends Fragment{
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_layout,container,false); //container 왜 쓰는지 모르겠다
+        return inflater.inflate(R.layout.fragment2_layout,container,false);
     }
 }
