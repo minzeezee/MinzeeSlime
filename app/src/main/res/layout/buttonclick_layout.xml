@@ -16,6 +16,7 @@
 
         <Button
             android:id="@+id/fragment1"
+            android:textSize="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -23,6 +24,7 @@
 
         <Button
             android:id="@+id/fragment2"
+            android:textSize="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -30,10 +32,19 @@
 
         <Button
             android:id="@+id/fragment3"
+            android:textSize="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="fragment3" />
+
+        <Button
+            android:id="@+id/fragment4"
+            android:textSize="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="fragment4" />
     </LinearLayout>
 
     <FrameLayout
