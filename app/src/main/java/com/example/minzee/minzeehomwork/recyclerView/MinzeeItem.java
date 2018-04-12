@@ -3,7 +3,7 @@ package com.example.minzee.minzeehomwork.recyclerView;
 /**
  * Created by hanmo on 2018. 4. 12..
  */
-
+//데이터들을 담을 그릇을 만든다. (이름, 나이)
 public class MinzeeItem {
 
     private int minzeeAge;
